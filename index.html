@@ -20,26 +20,11 @@ body {
     background: linear-gradient(135deg, #ff416c, #ff4b2b);
 }
 
-.hero h1 {
-    font-size: 28px;
-}
-
-.hero-btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 12px 20px;
-    background: white;
-    color: black;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* CONTAINER */
+/* GRID */
 .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
     padding: 20px;
 }
 
@@ -47,22 +32,34 @@ body {
 .card {
     background: #1c1c1c;
     border-radius: 15px;
-    width: 300px;
-    margin: 15px;
     padding: 15px;
-    text-align: center;
     position: relative;
-    transition: 0.2s;
+    transition: 0.4s;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .card:hover {
     transform: scale(1.03);
 }
 
-.highlight {
-    border: 2px solid #ff4b2b;
+/* FEATURED */
+.featured {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 20px;
 }
 
+.featured img {
+    width: 50%;
+}
+
+/* BADGE */
 .badge {
     position: absolute;
     top: 10px;
@@ -73,39 +70,21 @@ body {
     font-size: 12px;
 }
 
-img {
-    width: 100%;
-    border-radius: 10px;
-}
+/* CONTENT */
+img { width: 100%; border-radius: 10px; }
 
-.title {
-    font-size: 18px;
-    margin: 10px 0;
-}
+.title { font-size: 18px; margin: 10px 0; }
 
-.rating {
-    color: gold;
-}
+.rating { color: gold; }
 
-.live {
-    color: orange;
-    font-size: 14px;
-}
+.live { color: orange; font-size: 14px; }
 
-.price {
-    font-size: 20px;
-    margin: 10px 0;
-}
+.price { font-size: 20px; margin: 10px 0; }
 
 .old-price {
     text-decoration: line-through;
     font-size: 14px;
     color: gray;
-}
-
-.trust {
-    color: #00c853;
-    font-size: 14px;
 }
 
 .button {
@@ -116,134 +95,102 @@ img {
     color: white;
     text-decoration: none;
     border-radius: 10px;
-    font-weight: bold;
+    text-align: center;
 }
 
-/* FOOTER */
-.footer {
-    text-align: center;
-    font-size: 12px;
-    color: gray;
-    padding: 20px;
+/* POPUP SALES */
+.popup {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #1c1c1c;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .featured {
+        flex-direction: column;
+    }
+
+    .featured img {
+        width: 100%;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
 <div class="hero">
     <h1>🔥 Die besten Amazon Must-Haves</h1>
     <p>Produkte die gerade viral gehen 😳</p>
-    <a href="#products" class="hero-btn">Jetzt entdecken</a>
 </div>
 
-<!-- PRODUKTE -->
-<div class="container" id="products">
+<div class="container">
 
-<!-- PRODUKT 1 -->
-<div class="card highlight">
+<div class="card featured">
     <div class="badge">🔥 VIRAL</div>
-
-    <img src=https://m.media-amazon.com/images/I/81LkknBVMbL._AC_SX679_.jpg
-
-    <div class="title">TV Ambilight Licht 😳</div>
-
-    <div class="rating">★★★★★ (4.8)</div>
-
-    <div class="live">🔥 23 Leute schauen das gerade</div>
-
-    <div class="price">89,99€ <span class="old-price">149,99€</span></div>
-
-    <div class="trust">✔️ Über 2.000 zufriedene Käufer</div>
-
-    <a href=https://amzn.to/47LCNKK target="_blank" class="button">
-        🔥 Jetzt auf Amazon ansehen
-    </a>
+    <img src="https://m.media-amazon.com/images/I/81LkknBVMbL._AC_SX679_.jpg">
+    <div>
+        <div class="title">TV Ambilight Licht 😳</div>
+        <div class="rating">★★★★★ (4.8)</div>
+        <div class="live">🔥 <span id="viewer">23</span> Leute schauen das gerade</div>
+        <div class="price">89,99€ <span class="old-price">149,99€</span></div>
+        <a href="#" class="button">🔥 Jetzt kaufen</a>
+    </div>
 </div>
 
-    <!-- PRODUKT 2 -->
-<div class="card">
-    <div class="badge">🔥 TRENDING</div>
+<div class="card"><img src="https://m.media-amazon.com/images/I/51Miz5o-NwL._AC_SL1000_.jpg"><div class="title">Fire TV Stick</div><a href="#" class="button">Jetzt ansehen</a></div>
 
-    <img src="https://m.media-amazon.com/images/I/51Miz5o-NwL._AC_SL1000_.jpg">
+<div class="card"><img src="https://m.media-amazon.com/images/I/71Zh0Yo0RqL._AC_SL1500_.jpg"><div class="title">Echo Dot</div><a href="#" class="button">Jetzt ansehen</a></div>
 
-    <div class="title">fire TV Stick HD 😳</div>
-
-    <div class="rating">★★★★★ (4.7)</div>
-
-    <div class="live">👀 18 Leute schauen das gerade</div>
-
-    <div class="price">19,99€ <span class="old-price">39,99€</span></div>
-
-    <div class="trust">✔️ Tausende zufriedene Käufer</div>
-
-    <a href="https://amzn.to/4mcxJ8f" target="_blank" class="button">
-        🔥 Jetzt auf Amazon ansehen
-    </a>
-</div>
-
-<!-- PRODUKT 3 -->
-<div class="card">
-    <div class="badge">🔥 MUST HAVE</div>
-
-    <img src="https://m.media-amazon.com/images/I/71Zh0Yo0RqL._AC_SL1500_.jpg">
-
-    <div class="title">Echo dot🎬</div>
-
-    <div class="rating">★★★★☆ (4.5)</div>
-
-    <div class="live">👀 12 Leute schauen das gerade</div>
-
-    <div class="price">59,99€ <span class="old-price">99,99€</span></div>
-
-    <div class="trust">✔️ Sehr beliebt auf TikTok</div>
-
-    <a href="https://amzn.to/41hBbok" target="_blank" class="button">
-        🔥 Jetzt ansehen
-    </a>
-</div>
-
-<!-- PRODUKT 4 -->
-<div class="card">
-    <div class="badge">🔥 VIRAL</div>
-
-    <img src="https://m.media-amazon.com/images/I/615Sn8Zme7L._AC_SL1001_.jpg">
-
-    <div class="title">Amazon Echo Spot 🌌</div>
-
-    <div class="rating">★★★★★ (4.8)</div>
-
-    <div class="live">👀 21 Leute schauen das gerade</div>
-
-    <div class="price">24,99€ <span class="old-price">49,99€</span></div>
-
-    <div class="trust">✔️ Perfekt fürs Zimmer Setup</div>
-
-    <a href="https://amzn.to/3NZx3GD" target="_blank" class="button">
-        🔥 Jetzt sichern
-    </a>
-</div>
-
-<!-- PRODUKT 5 -->
-<div class="card">
-    <div class="badge">🔥 GEHEIMTIPP</div>
-
-    <img src="https://m.media-amazon.com/images/I/519ItLaYMvL._AC_SL1200_.jpg">
-
-    <div class="title">Samsung Galaxy Watch 5 🎮</div>
-
-    <div class="rating">★★★★☆ (4.6)</div>
-
-    <div class="live">👀 15 Leute schauen das gerade</div>
-
-    <div class="price">34,99€ <span class="old-price">69,99€</span></div>
-
-    <div class="trust">✔️ Perfekt für Unterwegs</div>
-
-    <a href="https://amzn.to/41OaLuv" target="_blank" class="button">
-        🔥 Jetzt anschauen
-    </a>
-</div>
+<div class="card"><img src="https://m.media-amazon.com/images/I/615Sn8Zme7L._AC_SL1001_.jpg"><div class="title">Echo Spot</div><a href="#" class="button">Jetzt ansehen</a></div>
 
 </div>
+
+<!-- POPUP -->
+<div class="popup" id="popup"></div>
+
+<script>
+// SCROLL ANIMATION
+const cards = document.querySelectorAll(".card");
+window.addEventListener("scroll", () => {
+    cards.forEach(card => {
+        const top = card.getBoundingClientRect().top;
+        if (top < window.innerHeight - 50) {
+            card.classList.add("show");
+        }
+    });
+});
+
+// VIEWER COUNTER
+let viewer = document.getElementById("viewer");
+setInterval(() => {
+    let num = parseInt(viewer.innerText);
+    num += Math.floor(Math.random() * 3 - 1);
+    if (num < 10) num = 10;
+    viewer.innerText = num;
+}, 2000);
+
+// FAKE SALES POPUP
+const names = ["Max", "Lukas", "Anna", "Sophie", "Tim"];
+const popup = document.getElementById("popup");
+
+setInterval(() => {
+    const name = names[Math.floor(Math.random() * names.length)];
+    popup.innerText = name + " hat gerade gekauft 😳";
+    popup.style.opacity = 1;
+
+    setTimeout(() => {
+        popup.style.opacity = 0;
+    }, 3000);
+}, 5000);
+</script>
+
+</body>
+</html>
