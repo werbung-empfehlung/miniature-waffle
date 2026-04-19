@@ -1,258 +1,341 @@
 <!DOCTYPE html>
+
 <html lang="de">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Amazon Empfehlungen</title>
+
+<title>Die besten Smart Home Gadgets 2026</title>
+
+<meta name="description" content="Top Smart Home Gadgets im Vergleich – beste Produkte nach Preis, Bewertung und Funktionen.">
 
 <style>
+
 body {
+
     margin: 0;
+
     font-family: Arial;
+
     background: #0f0f0f;
+
     color: white;
+
 }
 
-/* HERO */
-.hero {
+header {
+
+    padding: 30px;
+
     text-align: center;
-    padding: 40px 20px;
-    background: linear-gradient(135deg, #ff416c, #ff4b2b);
-}
 
-/* GRID */
-.container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    padding: 20px;
-}
-
-/* CARD */
-.card {
     background: #1c1c1c;
-    border-radius: 15px;
-    padding: 15px;
-    position: relative;
-    transition: 0.4s;
-    opacity: 0;
-    transform: translateY(30px);
+
 }
 
-.card.show {
-    opacity: 1;
-    transform: translateY(0);
+.container {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 20px;
+
 }
 
-.card:hover {
-    transform: scale(1.03);
+h1, h2, h3 {
+
+    margin-bottom: 10px;
+
 }
 
-/* FEATURED */
-.featured {
-    grid-column: 1 / -1;
-    display: flex;
-    gap: 20px;
+p {
+
+    color: #ccc;
+
 }
 
-.featured img {
-    width: 50%;
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin: 20px 0;
+
 }
 
-.featured .content {
-    flex: 1;
+td, th {
+
+    border: 1px solid #2a2a2a;
+
+    padding: 12px;
+
+    text-align: center;
+
 }
 
-/* BADGE */
-.badge {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: red;
-    padding: 5px 10px;
-    border-radius: 8px;
-    font-size: 12px;
+th {
+
+    background: #1c1c1c;
+
 }
 
-/* CONTENT */
-img { width: 100%; border-radius: 10px; }
+.card {
 
-.title { font-size: 18px; margin: 10px 0; }
+    background: #1c1c1c;
 
-.rating { color: gold; }
+    padding: 20px;
 
-.live { color: orange; font-size: 14px; }
+    border-radius: 12px;
 
-.price { font-size: 20px; margin: 10px 0; }
+    margin-bottom: 25px;
 
-.old-price {
-    text-decoration: line-through;
-    font-size: 14px;
-    color: gray;
+    border: 1px solid #2a2a2a;
+
 }
 
-.trust {
-    color: #00c853;
-    font-size: 14px;
+img {
+
+    width: 100%;
+
+    border-radius: 10px;
+
 }
 
 .button {
-    display: block;
-    margin-top: 10px;
-    padding: 12px;
-    background: #ff4b2b;
+
+    display: inline-block;
+
+    padding: 12px 20px;
+
+    background: #ff6a00;
+
     color: white;
+
     text-decoration: none;
-    border-radius: 10px;
-    text-align: center;
+
+    border-radius: 8px;
+
+    margin-top: 10px;
+
+    font-weight: bold;
+
 }
 
-/* POPUP */
-.popup {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
+footer {
+
     background: #1c1c1c;
-    padding: 10px 15px;
-    border-radius: 10px;
+
+    padding: 30px;
+
+    margin-top: 40px;
+
     font-size: 14px;
-    opacity: 0;
-    transition: 0.5s;
+
+    color: #aaa;
+
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-    .featured {
-        flex-direction: column;
-    }
-
-    .featured img {
-        width: 100%;
-    }
-}
 </style>
+
 </head>
 
 <body>
 
-<div class="hero">
-    <h1>🔥 Die besten Amazon Must-Haves</h1>
-    <p>Produkte die gerade viral gehen 😳</p>
-</div>
+<header>
+
+<h1>Die besten Smart Home Gadgets 2026</h1>
+
+<p>Ausgewählte Produkte basierend auf Bewertungen, Preis-Leistung und Funktionen</p>
+
+<p style="font-size:12px; color:gray;">
+
+*Affiliate-Links: Wir erhalten ggf. eine Provision
+
+</p>
+
+</header>
 
 <div class="container">
 
-<!-- FEATURED -->
-<div class="card featured">
-    <div class="badge">🔥 VIRAL</div>
+<h2>🏆 Schnellvergleich</h2>
 
-    <img src="https://m.media-amazon.com/images/I/81LkknBVMbL._AC_SX679_.jpg">
+<table>
 
-    <div class="content">
-        <div class="title">TV Ambilight Licht 😳</div>
-        <div class="rating">★★★★★ (4.8)</div>
-        <div class="live">🔥 <span id="viewer">23</span> Leute schauen das gerade</div>
-        <div class="price">89,99€ <span class="old-price">149,99€</span></div>
-        <div class="trust">✔️ Über 2.000 zufriedene Käufer</div>
+<tr>
 
-        <a href="https://amzn.to/47LCNKK" target="_blank" class="button">
-            🔥 Jetzt auf Amazon ansehen
-        </a>
-    </div>
-</div>
+<th>Produkt</th>
 
-<!-- PRODUKT 2 -->
+<th>Bewertung</th>
+
+<th>Preis</th>
+
+<th></th>
+
+</tr>
+
+<tr>
+
+<td>NEUES TOP PRODUKT</td>
+
+<td>⭐ 4.8</td>
+
+<td>–</td>
+
+<td><a href="https://amzn.to/4excz2F" target="_blank" class="button">Ansehen</a></td>
+<img loading="lazy" src="https://m.media-amazon.com/images/I/71fvKC4C-eL._AC_SX522_.jpg"
+</tr>
+
+<tr>
+
+<td>TV Ambilight LED</td>
+
+<td>⭐ 4.8</td>
+
+<td>89,99€</td>
+
+<td><a href="https://amzn.to/47LCNKK" target="_blank" class="button">Ansehen</a></td>
+
+</tr>
+
+<tr>
+
+<td>Fire TV Stick</td>
+
+<td>⭐ 4.7</td>
+
+<td>19,99€</td>
+
+<td><a href="https://amzn.to/4mcxJ8f" target="_blank" class="button">Ansehen</a></td>
+
+</tr>
+
+<tr>
+
+<td>Echo Dot</td>
+
+<td>⭐ 4.5</td>
+
+<td>59,99€</td>
+
+<td><a href="https://amzn.to/41hBbok" target="_blank" class="button">Ansehen</a></td>
+
+</tr>
+
+<tr>
+
+<td>Echo Spot</td>
+
+<td>⭐ 4.8</td>
+
+<td>24,99€</td>
+
+<td><a href="https://amzn.to/3NZx3GD" target="_blank" class="button">Ansehen</a></td>
+
+</tr>
+
+</table>
+
+<h2>📦 Unsere Empfehlungen im Detail</h2>
+
 <div class="card">
-    <div class="badge">🔥 TRENDING</div>
-    <img src="https://m.media-amazon.com/images/I/51Miz5o-NwL._AC_SL1000_.jpg">
-    <div class="title">Fire TV Stick HD 😳</div>
-    <div class="rating">★★★★★ (4.7)</div>
-    <div class="price">19,99€ <span class="old-price">39,99€</span></div>
 
-    <a href="https://amzn.to/4mcxJ8f" target="_blank" class="button">
-        🔥 Jetzt ansehen
-    </a>
+<h3>🔥 Empfehlung: NEUES TOP PRODUKT</h3>
+
+<img loading="lazy" src="https://via.placeholder.com/600x400">
+
+<p>
+
+✔️ Sehr beliebt aktuell<br>
+
+✔️ Starkes Preis-Leistungs-Verhältnis<br>
+
+✔️ Ideal für den Alltag
+
+</p>
+
+<a href="https://amzn.to/4excz2F" target="_blank" class="button">
+
+👉 Auf Amazon ansehen
+
+</a>
+
 </div>
 
-<!-- PRODUKT 3 -->
 <div class="card">
-    <div class="badge">🔥 MUST HAVE</div>
-    <img src="https://m.media-amazon.com/images/I/71Zh0Yo0RqL._AC_SL1500_.jpg">
-    <div class="title">Echo Dot 🎬</div>
-    <div class="rating">★★★★☆ (4.5)</div>
-    <div class="price">59,99€ <span class="old-price">99,99€</span></div>
 
-    <a href="https://amzn.to/41hBbok" target="_blank" class="button">
-        🔥 Jetzt ansehen
-    </a>
+<h3>TV Ambilight LED</h3>
+
+<img loading="lazy" src="https://m.media-amazon.com/images/I/81LkknBVMbL._AC_SX679_.jpg">
+
+<p>
+
+✔️ Synchronisiert sich mit dem TV-Bild<br>
+
+✔️ Perfekt für Filme & Gaming<br>
+
+✔️ Einfache Installation
+
+</p>
+
+<a href="https://amzn.to/47LCNKK" target="_blank" class="button">
+
+👉 Auf Amazon ansehen
+
+</a>
+
 </div>
 
-<!-- PRODUKT 4 -->
 <div class="card">
-    <div class="badge">🔥 VIRAL</div>
-    <img src="https://m.media-amazon.com/images/I/615Sn8Zme7L._AC_SL1001_.jpg">
-    <div class="title">Amazon Echo Spot 🌌</div>
-    <div class="rating">★★★★★ (4.8)</div>
-    <div class="price">24,99€ <span class="old-price">49,99€</span></div>
 
-    <a href="https://amzn.to/3NZx3GD" target="_blank" class="button">
-        🔥 Jetzt sichern
-    </a>
+<h3>Fire TV Stick</h3>
+
+<img loading="lazy" src="https://m.media-amazon.com/images/I/51Miz5o-NwL._AC_SL1000_.jpg">
+
+<p>
+
+✔️ Zugriff auf Streaming-Apps<br>
+
+✔️ Schnelle Einrichtung<br>
+
+✔️ Kompakt & günstig
+
+</p>
+
+<a href="https://amzn.to/4mcxJ8f" target="_blank" class="button">
+
+👉 Auf Amazon ansehen
+
+</a>
+
 </div>
 
-<!-- PRODUKT 5 -->
 <div class="card">
-    <div class="badge">🔥 GEHEIMTIPP</div>
-    <img src="https://m.media-amazon.com/images/I/519ItLaYMvL._AC_SL1200_.jpg">
-    <div class="title">Samsung Galaxy Watch 5 🎮</div>
-    <div class="rating">★★★★☆ (4.6)</div>
-    <div class="price">34,99€ <span class="old-price">69,99€</span></div>
 
-    <a href="https://amzn.to/41OaLuv" target="_blank" class="button">
-        🔥 Jetzt anschauen
-    </a>
+<h3>Echo Dot</h3>
+
+<img loading="lazy" src="https://m.media-amazon.com/images/I/71Zh0Yo0RqL._AC_SL1500_.jpg">
+
+<p>
+
+✔️ Sprachsteuerung mit Alexa<br>
+
+✔️ Smart Home Steuerung<br>
+
+✔️ Gute Klangqualität
+
+</p>
+
+<a href="https://amzn.to/41hBbok" target="_blank" class="button">
+
+👉 Auf Amazon ansehen
+
+</a>
+
 </div>
 
 </div>
-
-<!-- POPUP -->
-<div class="popup" id="popup"></div>
-
-<script>
-// SCROLL ANIMATION
-const cards = document.querySelectorAll(".card");
-window.addEventListener("scroll", () => {
-    cards.forEach(card => {
-        const top = card.getBoundingClientRect().top;
-        if (top < window.innerHeight - 50) {
-            card.classList.add("show");
-        }
-    });
-});
-
-// VIEWER COUNTER
-let viewer = document.getElementById("viewer");
-setInterval(() => {
-    let num = parseInt(viewer.innerText);
-    num += Math.floor(Math.random() * 3 - 1);
-    if (num < 10) num = 10;
-    viewer.innerText = num;
-}, 2000);
-
-// FAKE SALES POPUP
-const names = ["Max", "Lukas", "Anna", "Sophie", "Tim"];
-const popup = document.getElementById("popup");
-
-setInterval(() => {
-    const name = names[Math.floor(Math.random() * names.length)];
-    popup.innerText = name + " hat gerade gekauft 😳";
-    popup.style.opacity = 1;
-
-    setTimeout(() => {
-        popup.style.opacity = 0;
-    }, 3000);
-}, 5000);
-</script>
-
-</body>
-</html>
